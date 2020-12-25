@@ -23,11 +23,3 @@
 
 I originally used the [Crinsane/LaravelShoppingcart](https://github.com/Crinsane/LaravelShoppingcart) package but it is slow to update to the latest versions of Laravel. I now use [hardevine/LaravelShoppingcart](https://github.com/hardevine/LaravelShoppingcart) which is a forked version that updates quicker.
 
-## Windows Users - money_format() issue
-
-The `money_format` function does not work in Windows. Take a look at [this thread](https://stackoverflow.com/questions/6369887/alternative-to-money-format-function-in-php-on-windows-platform/18990145). As an alternative, just use the `number_format` function instead.
-
-1. In `app/Models/helpers.php` replace `money_format` line with `return '$'.number_format($price / 100, 2);`
-1. In `app/Models/Product.php` replace `money_format` line with `return '$'.number_format($this->price / 100, 2);`
-1. In `config/cart.php` set the `thousand_seperator` to an empty string or you might get a 'non well formed numeric value encountered' error. It conflicts with `number_format`.
-
