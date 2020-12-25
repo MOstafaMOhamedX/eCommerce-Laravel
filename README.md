@@ -27,12 +27,7 @@ I originally used the [Crinsane/LaravelShoppingcart](https://github.com/Crinsane
 
 The `money_format` function does not work in Windows. Take a look at [this thread](https://stackoverflow.com/questions/6369887/alternative-to-money-format-function-in-php-on-windows-platform/18990145). As an alternative, just use the `number_format` function instead.
 
-1. In `app/helpers.php` replace `money_format` line with `return '$'.number_format($price / 100, 2);`
-1. In `app/Product.php` replace `money_format` line with `return '$'.number_format($this->price / 100, 2);`
+1. In `app/Models/helpers.php` replace `money_format` line with `return '$'.number_format($price / 100, 2);`
+1. In `app/Models/Product.php` replace `money_format` line with `return '$'.number_format($this->price / 100, 2);`
 1. In `config/cart.php` set the `thousand_seperator` to an empty string or you might get a 'non well formed numeric value encountered' error. It conflicts with `number_format`.
 
-## Starting from a particular point
-
-1. Clone the repo and `cd` into it
-1. `git checkout f4f651a8a35ebb2ff38ba15771fd65c93051f942`
-1. Follow the rest of the steps above. Instead of `php artisan ecommerce:install`, migrate and seed the normal way with `php artisan migrate --seed`
