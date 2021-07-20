@@ -1,7 +1,7 @@
 # Laravel Ecommerce Example
 
 ## Installation
-
+Link -- https://sleepy-plateau-66667.herokuapp.com/
 1. Clone the repo and `cd` into it
 1. `composer install`
 1. Rename or copy `.env.example` file to `.env`
