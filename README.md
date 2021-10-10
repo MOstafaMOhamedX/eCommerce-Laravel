@@ -34,4 +34,5 @@ Stripe is a payment gateway that offers easy and most efficient ways to process 
 
 
 -------Algolia for real time search-------
+
 official Laravel search package. Using Scout Extended, you are free to use all Laravel Scout’s features, and the full power of Algolia at the same time.
